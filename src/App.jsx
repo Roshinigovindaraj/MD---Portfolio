@@ -32,32 +32,24 @@ import {
 } from 'lucide-react'
 import './App.css'
 import agilanImage from './assets/Agilan-image.jpeg'
+import heroBgImage from './assets/image.png'
 import bitbyteLogo from './assets/BB-Logo.png'
-import siteQr from './assets/BB-Site-QR.png'
 
 const navItems = ['Home', 'About', 'Services', 'Contact', 'Business Hours', 'Appointment']
 
-const metrics = [
-  { value: '50+', label: 'Projects Delivered' },
-  { value: '200+', label: 'Happy Clients' },
-  { value: '5+', label: 'Years of Experience' },
-  { value: 'Premium', label: 'Support Always' },
-  { value: 'Growth', label: 'Focused Strategy' },
-]
-
 const serviceTiles = [
-  { title: 'Web Application Development', icon: Globe2 },
-  { title: 'Custom Software Development', icon: Code2 },
-  { title: 'Mobile App Development', icon: Smartphone },
-  { title: 'Digital Marketing', icon: Megaphone },
-  { title: 'SEO | AEO | GEO', icon: Search },
-  { title: 'Google Ads & Meta Ads', icon: MousePointerClick },
-  { title: 'Personal Branding', icon: UserRound },
-  { title: 'Business Analytics', icon: BarChart3 },
-  { title: 'Real-Time Sales Dashboards', icon: LayoutDashboard },
-  { title: 'SaaS Product Development', icon: DatabaseZap },
-  { title: 'API Integration & Security', icon: ShieldCheck },
-  { title: 'AI Powered Solutions', icon: Bot },
+  { title: 'Web Application Development', icon: Globe2, popup: 'We build scalable, secure, AI-based solutions for modern business workflows, customer portals, dashboards, and high-performance web platforms.', cta: 'View Solution' },
+  { title: 'Custom Software Development', icon: Code2, popup: 'AI-based solutions tailored to your operations, approvals, reporting, task flows, and internal business automation.', cta: 'Build Custom' },
+  { title: 'Mobile App Development', icon: Smartphone, popup: 'AI-based solutions for smart mobile experiences, customer engagement, field updates, notifications, and mobile-first business access.', cta: 'Plan App' },
+  { title: 'Digital Marketing', icon: Megaphone, popup: 'We use AI-based solutions to plan campaigns, improve targeting, analyze audiences, and drive measurable digital growth.', cta: 'Grow Online' },
+  { title: 'SEO | AEO | GEO', icon: Search, popup: 'AI-based solutions for search, answer, and generative-engine visibility with content structure, schema, and intent optimization.', cta: 'Improve SEO' },
+  { title: 'Google Ads & Meta Ads', icon: MousePointerClick, popup: 'AI-based solutions for ad optimization, audience testing, creative insights, campaign tracking, and lead quality improvement.', cta: 'Run Ads' },
+  { title: 'Personal Branding', icon: UserRound, popup: 'AI-based solutions to build authority, content direction, digital presence, profile positioning, and brand visibility.', cta: 'Build Brand' },
+  { title: 'Business Analytics', icon: BarChart3, popup: 'AI-based solutions for data-driven decisions, customer insights, performance tracking, and business intelligence dashboards.', cta: 'Analyze Data' },
+  { title: 'Real-Time Sales Dashboards', icon: LayoutDashboard, popup: 'AI-based solutions for live performance tracking, sales visibility, team accountability, and smarter revenue reporting.', cta: 'Track Sales' },
+  { title: 'SaaS Product Development', icon: DatabaseZap, popup: 'AI-based solutions for scalable product platforms, subscriptions, user workflows, admin systems, and cloud-ready SaaS tools.', cta: 'Launch SaaS' },
+  { title: 'API Integration & Security', icon: ShieldCheck, popup: 'AI-based solutions for secure connected systems, API automation, access control, data safety, and integration reliability.', cta: 'Secure Systems' },
+  { title: 'AI Powered Solutions', icon: Bot, popup: 'We create custom AI-based solutions including automation, smart assistants, analytics, recommendation systems, and intelligent business tools.', cta: 'Explore AI' },
 ]
 
 const quickActions = [
@@ -76,17 +68,10 @@ const quickActions = [
 ]
 
 const socialLinks = [
-  { label: 'Facebook', icon: 'f', tone: 'facebook' },
-  { label: 'Instagram', icon: 'ig', tone: 'instagram' },
-  { label: 'LinkedIn', icon: 'in', tone: 'linkedin' },
-  { label: 'YouTube', icon: 'play', tone: 'youtube' },
-]
-
-const values = [
-  'Visionary Leadership',
-  'Result Driven Execution',
-  'Growth Focused Strategy',
-  'Client Focused Delivery',
+  { label: 'Facebook', iconClass: 'fa-brands fa-facebook', tone: 'facebook', href: 'https://www.facebook.com/profile.php?id=61590062057662' },
+  { label: 'Instagram', iconClass: 'fa-brands fa-instagram', tone: 'instagram', href: 'https://www.instagram.com/bit_byte.technologies/' },
+  { label: 'LinkedIn', iconClass: 'fa-brands fa-linkedin', tone: 'linkedin', href: 'https://www.linkedin.com/company/bitbyte-technologie/posts/?feedView=all' },
+  { label: 'YouTube', iconClass: 'fa-brands fa-youtube', tone: 'youtube', href: 'https://www.youtube.com/@BitByteTechnologies' },
 ]
 
 const whyItems = ['Innovative Solution', 'Result Driven', 'Customer Focused', 'Quality & Trust']
@@ -181,18 +166,7 @@ function App() {
       </header>
 
       <section className="hero" id="home">
-        <div className="hero-photo-panel">
-          <div className="hero-value-rail" aria-label="Leadership strengths">
-            {values.map((value) => (
-              <span key={value}>{value}</span>
-            ))}
-          </div>
-          <img src={agilanImage} alt="Agilan N, Managing Director" />
-          <div className="hero-signature">
-            <strong>Agilan.N</strong>
-            <span>Managing Director</span>
-          </div>
-        </div>
+        <img className="hero-background-image" src={heroBgImage} alt="Agilan N hero background" />
 
         <div className="hero-copy">
           <p className="eyebrow">Hello, I'm</p>
@@ -204,29 +178,15 @@ function App() {
           <p className="hero-lead">
             We transform your imagination into powerful digital solutions that drive growth and deliver real results.
           </p>
+          <div className="hero-actions">
+            <a className="secondary-button visit-site-button" href="https://bitbytetech.org" target="_blank" rel="noreferrer"><Globe2 size={24} />Visit Our Website</a>
+            <a className="primary-button" href="#appointment"><Calendar size={24} />Book Appointment</a>
+            <a className="secondary-button" href="https://wa.me/919943743136" target="_blank" rel="noreferrer"><Phone size={24} />WhatsApp Now</a>
+          </div>
         </div>
 
         <div className="hero-brand-panel">
-          <img className="hero-company-logo" src={bitbyteLogo} alt="BitByte Technologies" />
-          <div className="hero-qr-card" aria-label="Website QR code">
-            <img className="site-qr" src={siteQr} alt="QR code for BitByte Technologies website" />
-            <p>Scan to save my card</p>
-          </div>
-          <div className="hero-actions">
-            <a className="secondary-button visit-site-button" href="https://bitbytetech.org" target="_blank" rel="noreferrer">Visit Our Website</a>
-            <a className="primary-button" href="#appointment">Book Appointment</a>
-            <a className="secondary-button" href="https://wa.me/919943743136" target="_blank" rel="noreferrer">WhatsApp Now</a>
-          </div>
         </div>
-      </section>
-
-      <section className="metrics" aria-label="Business highlights">
-        {metrics.map((metric) => (
-          <article key={metric.label}>
-            <strong>{metric.value}</strong>
-            <span>{metric.label}</span>
-          </article>
-        ))}
       </section>
 
       <section className="about-services-section" id="about">
@@ -269,9 +229,16 @@ function App() {
         <div className="services-showcase" id="services">
           <h2>Our Services</h2>
           <p>End-to-end digital solutions designed to grow your business.</p>
+          <div className="service-hover-hint">Hover a service to view AI-based solution details.</div>
           <div className="service-tile-grid">
             {serviceTiles.map((service) => (
               <button type="button" className="showcase-service-card" key={service.title}>
+                <div className="service-popup">
+                  <div className="popup-icon"><service.icon size={30} strokeWidth={2.2} /></div>
+                  <h3>{service.title}</h3>
+                  <p>{service.popup}</p>
+                  <span>{service.cta}</span>
+                </div>
                 <span className="service-icon"><service.icon size={42} strokeWidth={2.2} /></span>
                 <strong>{service.title}</strong>
                 <i></i>
@@ -360,7 +327,7 @@ function App() {
               <CardHeader title="Connect With Us" />
               <div className="connect-icons">
                 {socialLinks.map((item) => (
-                  <a href="#contact" className={item.tone} key={item.label}><span>{item.icon}</span>{item.label}</a>
+                  <a href={item.href} className={item.tone} target="_blank" rel="noreferrer" key={item.label}><span><i className={item.iconClass}></i></span>{item.label}</a>
                 ))}
               </div>
             </article>
@@ -381,9 +348,20 @@ function App() {
       </section>
 
       <footer className="site-footer">
-        <img src={bitbyteLogo} alt="BitByte Technologies" />
-        <blockquote>We don't just build software, we transform imagination into digital reality.</blockquote>
-        <small>Copyright 2025 BitByte Technologies. All Rights Reserved.</small>
+        <div className="footer-brand-block">
+          <img src={bitbyteLogo} alt="BitByte Technologies" />
+          <p>Imagination to Reality</p>
+        </div>
+        <div className="footer-pillars">
+          <span><Lightbulb size={24} />Innovative Solution</span>
+          <span><Target size={24} />Result Driven</span>
+          <span><UsersRound size={24} />Customer Focused</span>
+          <span><ShieldCheck size={24} />Quality & Trust</span>
+        </div>
+        <div className="footer-closing">
+          <blockquote>We don't just build software, we transform imagination into digital reality.</blockquote>
+          <small>Copyright 2025 BitByte Technologies. All Rights Reserved.</small>
+        </div>
       </footer>
     </main>
   )
