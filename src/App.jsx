@@ -68,10 +68,10 @@ const quickActions = [
 ]
 
 const socialLinks = [
-  { label: 'Facebook', iconClass: 'fa-brands fa-facebook', tone: 'facebook', href: 'https://www.facebook.com/profile.php?id=61590062057662' },
-  { label: 'Instagram', iconClass: 'fa-brands fa-instagram', tone: 'instagram', href: 'https://www.instagram.com/bit_byte.technologies/' },
-  { label: 'LinkedIn', iconClass: 'fa-brands fa-linkedin', tone: 'linkedin', href: 'https://www.linkedin.com/company/bitbyte-technologie/posts/?feedView=all' },
-  { label: 'YouTube', iconClass: 'fa-brands fa-youtube', tone: 'youtube', href: 'https://www.youtube.com/@BitByteTechnologies' },
+  { label: 'Facebook', iconClass: 'fa-brands fa-facebook', tone: 'facebook' },
+  { label: 'Instagram', iconClass: 'fa-brands fa-instagram', tone: 'instagram' },
+  { label: 'LinkedIn', iconClass: 'fa-brands fa-linkedin', tone: 'linkedin' },
+  { label: 'YouTube', iconClass: 'fa-brands fa-youtube', tone: 'youtube' },
 ]
 
 const whyItems = ['Innovative Solution', 'Result Driven', 'Customer Focused', 'Quality & Trust']
@@ -96,7 +96,7 @@ function App() {
       'N:Agilan;N;;;',
       'FN:Mr. Agilan.N',
       'ORG:BitByte Technologies',
-      'TITLE:Managing Director',
+      'TITLE:Executive Director',
       'TEL;TYPE=CELL:+919943743136',
       'EMAIL:reachus@bitbytech.org',
       'URL:https://bitbytetech.org',
@@ -120,7 +120,7 @@ function App() {
   async function shareCard() {
     const shareData = {
       title: 'Mr. Agilan.N - BitByte Technologies',
-      text: 'Managing Director, BitByte Technologies. Imagination to Reality.',
+      text: 'Executive Director, BitByte Technologies. Imagination to Reality.',
       url: 'https://bitbytetech.org',
     }
 
@@ -171,7 +171,7 @@ function App() {
         <div className="hero-copy">
           <p className="eyebrow">Hello, I'm</p>
           <h1>AGILAN.N</h1>
-          <p className="role">Managing Director</p>
+          <p className="role">Executive Director</p>
           <div className="hero-rule"><span></span></div>
           <h2>BITBYTE TECHNOLOGIES</h2>
           <p className="hero-tagline">Imagination to Reality</p>
@@ -327,7 +327,7 @@ function App() {
               <CardHeader title="Connect With Us" />
               <div className="connect-icons">
                 {socialLinks.map((item) => (
-                  <a href={item.href} className={item.tone} target="_blank" rel="noreferrer" key={item.label}><span><i className={item.iconClass}></i></span>{item.label}</a>
+                  <a href="#contact" className={item.tone} key={item.label}><span><i className={item.iconClass}></i></span>{item.label}</a>
                 ))}
               </div>
             </article>
