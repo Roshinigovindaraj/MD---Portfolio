@@ -41,11 +41,11 @@ const navItems = ['Home', 'About', 'Services', 'Contact', 'Appointment']
 const serviceTiles = [
   { title: 'AI Powered Solutions', icon: Bot, popup: 'We create custom AI-based solutions including automation, smart assistants, analytics, recommendation systems, and intelligent business tools.', cta: 'Explore AI' },
     { title: 'AI Based Personal Branding', icon: UserRound, popup: 'AI-based solutions to build authority, content direction, digital presence, profile positioning, and brand visibility.', cta: 'Build Brand' },
+      { title: 'Metaverse -Mixed Reality(AR-VR)', icon: DatabaseZap, popup: 'A metaverse project is a collective 3D virtual shared space combining virtual reality (VR), augmented reality (AR), and blockchain.', cta: 'Metaverse' },
       { title: 'SEO | AEO | GEO', icon: Search, popup: 'AI-based solutions for search, answer, and generative-engine visibility with content structure, schema, and intent optimization.', cta: 'Improve SEO' },
-          { title: 'Digital Marketing', icon: Megaphone, popup: 'We use AI-based solutions to plan campaigns, improve targeting, analyze audiences, and drive measurable digital growth.', cta: 'Grow Online' },
+          { title: 'AI Based Digital Marketing', icon: Megaphone, popup: 'We use AI-based solutions to plan campaigns, improve targeting, analyze audiences, and drive measurable digital growth.', cta: 'Grow Online' },
             { title: 'Business Analytics', icon: BarChart3, popup: 'AI-based solutions for data-driven decisions, customer insights, performance tracking, and business intelligence dashboards.', cta: 'Analyze Data' },
               { title: 'Real-Time Sales Dashboards', icon: LayoutDashboard, popup: 'AI-based solutions for live performance tracking, sales visibility, team accountability, and smarter revenue reporting.', cta: 'Track Sales' },
-  { title: 'SaaS Product Development', icon: DatabaseZap, popup: 'AI-based solutions for scalable product platforms, subscriptions, user workflows, admin systems, and cloud-ready SaaS tools.', cta: 'Launch SaaS' },
   { title: 'Web Application Development', icon: Globe2, popup: 'We build scalable, secure, AI-based solutions for modern business workflows, customer portals, dashboards, and high-performance web platforms.', cta: 'View Solution' },
   { title: 'Custom Software Development', icon: Code2, popup: 'AI-based solutions tailored to your operations, approvals, reporting, task flows, and internal business automation.', cta: 'Build Custom' },
   { title: 'Mobile App Development', icon: Smartphone, popup: 'AI-based solutions for smart mobile experiences, customer engagement, field updates, notifications, and mobile-first business access.', cta: 'Plan App' },
@@ -97,8 +97,7 @@ const experienceCards = [
   {
     title: 'Growth Strategist',
     icon: Rocket,
-    points: ['3+ Years in Telecom', '7+ Years in Telecommunication Industry', 'Worked across Airtel, Vodafone, Huawei, Honor, OPPO'],
-    badges: ['Airtel', 'Vodafone', 'Huawei', 'Honor', 'OPPO'],
+    points: ['3+ Years in Telecom', '7+ Years in Telecommunication Industry', 'Worked across Aircel, Vodafone, Huawei, Honor, OPPO'],
     summaryIcon: Globe2,
     summary: 'Building growth strategies through telecom, digital market understanding, and business execution.',
   },
