@@ -5,6 +5,7 @@ import {
   Calendar,
   CalendarClock,
   CalendarDays,
+  CircleCheck,
   Code2,
   Contact,
   DatabaseZap,
@@ -35,21 +36,22 @@ import agilanImage from './assets/Agilan-image.jpeg'
 import heroBgImage from './assets/image.png'
 import bitbyteLogo from './assets/BB-Logo.png'
 
-const navItems = ['Home', 'About', 'Services', 'Contact', 'Business Hours', 'Appointment']
+const navItems = ['Home', 'About', 'Services', 'Contact', 'Appointment']
 
 const serviceTiles = [
+  { title: 'AI Powered Solutions', icon: Bot, popup: 'We create custom AI-based solutions including automation, smart assistants, analytics, recommendation systems, and intelligent business tools.', cta: 'Explore AI' },
+    { title: 'AI Based Personal Branding', icon: UserRound, popup: 'AI-based solutions to build authority, content direction, digital presence, profile positioning, and brand visibility.', cta: 'Build Brand' },
+      { title: 'SEO | AEO | GEO', icon: Search, popup: 'AI-based solutions for search, answer, and generative-engine visibility with content structure, schema, and intent optimization.', cta: 'Improve SEO' },
+          { title: 'Digital Marketing', icon: Megaphone, popup: 'We use AI-based solutions to plan campaigns, improve targeting, analyze audiences, and drive measurable digital growth.', cta: 'Grow Online' },
+            { title: 'Business Analytics', icon: BarChart3, popup: 'AI-based solutions for data-driven decisions, customer insights, performance tracking, and business intelligence dashboards.', cta: 'Analyze Data' },
+              { title: 'Real-Time Sales Dashboards', icon: LayoutDashboard, popup: 'AI-based solutions for live performance tracking, sales visibility, team accountability, and smarter revenue reporting.', cta: 'Track Sales' },
+  { title: 'SaaS Product Development', icon: DatabaseZap, popup: 'AI-based solutions for scalable product platforms, subscriptions, user workflows, admin systems, and cloud-ready SaaS tools.', cta: 'Launch SaaS' },
   { title: 'Web Application Development', icon: Globe2, popup: 'We build scalable, secure, AI-based solutions for modern business workflows, customer portals, dashboards, and high-performance web platforms.', cta: 'View Solution' },
   { title: 'Custom Software Development', icon: Code2, popup: 'AI-based solutions tailored to your operations, approvals, reporting, task flows, and internal business automation.', cta: 'Build Custom' },
   { title: 'Mobile App Development', icon: Smartphone, popup: 'AI-based solutions for smart mobile experiences, customer engagement, field updates, notifications, and mobile-first business access.', cta: 'Plan App' },
-  { title: 'Digital Marketing', icon: Megaphone, popup: 'We use AI-based solutions to plan campaigns, improve targeting, analyze audiences, and drive measurable digital growth.', cta: 'Grow Online' },
-  { title: 'SEO | AEO | GEO', icon: Search, popup: 'AI-based solutions for search, answer, and generative-engine visibility with content structure, schema, and intent optimization.', cta: 'Improve SEO' },
   { title: 'Google Ads & Meta Ads', icon: MousePointerClick, popup: 'AI-based solutions for ad optimization, audience testing, creative insights, campaign tracking, and lead quality improvement.', cta: 'Run Ads' },
-  { title: 'Personal Branding', icon: UserRound, popup: 'AI-based solutions to build authority, content direction, digital presence, profile positioning, and brand visibility.', cta: 'Build Brand' },
-  { title: 'Business Analytics', icon: BarChart3, popup: 'AI-based solutions for data-driven decisions, customer insights, performance tracking, and business intelligence dashboards.', cta: 'Analyze Data' },
-  { title: 'Real-Time Sales Dashboards', icon: LayoutDashboard, popup: 'AI-based solutions for live performance tracking, sales visibility, team accountability, and smarter revenue reporting.', cta: 'Track Sales' },
-  { title: 'SaaS Product Development', icon: DatabaseZap, popup: 'AI-based solutions for scalable product platforms, subscriptions, user workflows, admin systems, and cloud-ready SaaS tools.', cta: 'Launch SaaS' },
   { title: 'API Integration & Security', icon: ShieldCheck, popup: 'AI-based solutions for secure connected systems, API automation, access control, data safety, and integration reliability.', cta: 'Secure Systems' },
-  { title: 'AI Powered Solutions', icon: Bot, popup: 'We create custom AI-based solutions including automation, smart assistants, analytics, recommendation systems, and intelligent business tools.', cta: 'Explore AI' },
+  
 ]
 
 const quickActions = [
@@ -68,16 +70,62 @@ const quickActions = [
 ]
 
 const socialLinks = [
-  { label: 'Facebook', iconClass: 'fa-brands fa-facebook', tone: 'facebook' },
-  { label: 'Instagram', iconClass: 'fa-brands fa-instagram', tone: 'instagram' },
-  { label: 'LinkedIn', iconClass: 'fa-brands fa-linkedin', tone: 'linkedin' },
-  { label: 'YouTube', iconClass: 'fa-brands fa-youtube', tone: 'youtube' },
+  { label: 'Facebook', iconClass: 'fa-brands fa-facebook', tone: 'facebook', href: 'https://www.facebook.com/profile.php?id=61590062057662' },
+  { label: 'Instagram', iconClass: 'fa-brands fa-instagram', tone: 'instagram', href: 'https://www.instagram.com/bit_byte.technologies/' },
+  { label: 'LinkedIn', iconClass: 'fa-brands fa-linkedin', tone: 'linkedin', href: 'https://www.linkedin.com/company/bitbyte-technologie/posts/?feedView=all' },
+  { label: 'YouTube', iconClass: 'fa-brands fa-youtube', tone: 'youtube', href: 'https://www.youtube.com/@BitByteTechnologies' },
 ]
 
-const whyItems = ['Innovative Solution', 'Result Driven', 'Customer Focused', 'Quality & Trust']
+const whyItems = ['AI Innovative Solution', 'Result Driven', 'Customer Oriented', 'Build Brand Quality & Trust']
 
-const valueIcons = [Trophy, Target, Rocket, Handshake, Star]
 const whyIcons = [Lightbulb, Target, UsersRound, ShieldCheck]
+const experienceCards = [
+  {
+    title: 'Visionary Leader',
+    icon: Trophy,
+    points: ['12+ Years in R&D', 'Product & Marketing Strategy', 'AI Science for Business Vision'],
+    summaryIcon: UserRound,
+    summary: 'Leading innovation from research ideas to market-ready business solutions.',
+  },
+  {
+    title: 'Result Driven',
+    icon: Target,
+    points: ['R&D to Product Execution', '2+ Years in Business Survey & R&D', 'Market-Focused Approach'],
+    summaryIcon: BarChart3,
+    summary: 'Turning research, insights, and customer needs into measurable business outcomes.',
+  },
+  {
+    title: 'Growth Strategist',
+    icon: Rocket,
+    points: ['3+ Years in Telecom', '7+ Years in Telecommunication Industry', 'Worked across Airtel, Vodafone, Huawei, Honor, OPPO'],
+    badges: ['Airtel', 'Vodafone', 'Huawei', 'Honor', 'OPPO'],
+    summaryIcon: Globe2,
+    summary: 'Building growth strategies through telecom, digital market understanding, and business execution.',
+  },
+  {
+    title: 'Client Focused',
+    icon: Handshake,
+    points: ['5000+ Customers Trained', 'Business Communication & Customer Handling', 'Practical Market Knowledge'],
+    summaryIcon: UsersRound,
+    summary: 'Helping customers and teams understand products, solve problems, and move with confidence.',
+  },
+  {
+    title: 'Excellence Always',
+    icon: Star,
+    points: ['11+ Years as Trainer', 'Training Experience with OPPO, Huawei, T369', 'Quality, Trust & Long-Term Impact'],
+    summaryIcon: ShieldCheck,
+    summary: 'Delivering professional training, reliable guidance, and consistent business value.',
+  },
+]
+const aiPattern = /(AI Science For Buisness|AI-based|AI Based|AI Powered|AI services|AI business methods|\bAI\b)/i
+
+function highlightAI(text) {
+  return String(text).split(aiPattern).map((part, index) => (
+    aiPattern.test(part)
+      ? <mark className="ai-highlight" key={`${part}-${index}`}>{part}</mark>
+      : part
+  ))
+}
 
 function App() {
   const [formStatus, setFormStatus] = useState('')
@@ -85,8 +133,23 @@ function App() {
 
   function handleSubmit(event) {
     event.preventDefault()
-    setFormStatus('Thanks. Your inquiry is ready to be sent to the BitByte team.')
-    event.currentTarget.reset()
+    const formData = new FormData(event.currentTarget)
+    const inquiryMessage = [
+      'Hello Mr. Agilan.N,',
+      '',
+      'New project inquiry from BitByte portfolio website.',
+      '',
+      `Name: ${formData.get('name')}`,
+      `Email: ${formData.get('email')}`,
+      `Phone: ${formData.get('phone')}`,
+      `Subject: ${formData.get('subject') || 'Not specified'}`,
+      '',
+      'Requirement:',
+      formData.get('message'),
+    ].join('\n')
+
+    window.open(`https://wa.me/919943743136?text=${encodeURIComponent(inquiryMessage)}`, '_blank', 'noopener,noreferrer')
+    setFormStatus('WhatsApp opened with your inquiry details. Please tap send to complete it.')
   }
 
   function saveContact() {
@@ -171,12 +234,13 @@ function App() {
         <div className="hero-copy">
           <p className="eyebrow">Hello, I'm</p>
           <h1>AGILAN.N</h1>
-          <p className="role">Executive Director</p>
+          <p className="role">Founder & Executive Director</p>
           <div className="hero-rule"><span></span></div>
           <h2>BITBYTE TECHNOLOGIES</h2>
+          <p className="hero-ai-line">“<span>AI Science For Buisness</span>”</p>
           <p className="hero-tagline">Imagination to Reality</p>
           <p className="hero-lead">
-            We transform your imagination into powerful digital solutions that drive growth and deliver real results.
+            We transform your imagination into AI powered digital solutions that drive growth and deliver AI Based business results.
           </p>
           <div className="hero-actions">
             <a className="secondary-button visit-site-button" href="https://bitbytetech.org" target="_blank" rel="noreferrer"><Globe2 size={24} />Visit Our Website</a>
@@ -190,25 +254,55 @@ function App() {
       </section>
 
       <section className="about-services-section" id="about">
-        <div className="about-value-strip">
-          {['Visionary Leader', 'Result Driven', 'Growth Strategist', 'Client Focused', 'Excellence Always'].map((item, index) => {
-            const Icon = valueIcons[index]
+        <section className="experience-section" aria-labelledby="experience-title">
+          <div className="experience-heading">
+            <span className="ornament-line"></span>
+            <h2 id="experience-title">Leadership Experience & Business Expertise</h2>
+            <span className="ornament-line small"></span>
+            <p>A strong blend of R&D, product strategy, telecom, marketing, training, and customer-focused business growth.</p>
+          </div>
+
+          <div className="experience-timeline" aria-hidden="true"><span></span></div>
+
+          <div className="experience-grid">
+          {experienceCards.map((item) => {
+            const Icon = item.icon
+            const SummaryIcon = item.summaryIcon
             return (
-            <div className="about-value-item" key={item}>
-              <span><Icon size={34} strokeWidth={2.4} /></span>
-              <strong>{item}</strong>
-            </div>
-          )})}
-        </div>
+              <article className="experience-card" key={item.title}>
+                <div className="experience-card-top">
+                  <span className="experience-icon"><Icon size={52} strokeWidth={2.2} /></span>
+                  <h3>{item.title}</h3>
+                  <i></i>
+                  <ul>
+                    {item.points.map((point) => (
+                      <li key={point}><CircleCheck size={18} fill="currentColor" /><span>{highlightAI(point)}</span></li>
+                    ))}
+                  </ul>
+                  {item.badges && (
+                    <div className="experience-badges">
+                      {item.badges.map((badge) => <span key={badge}>{badge}</span>)}
+                    </div>
+                  )}
+                </div>
+                <div className="experience-card-bottom">
+                  <SummaryIcon size={44} strokeWidth={2.1} />
+                  <p>{item.summary}</p>
+                </div>
+              </article>
+            )
+          })}
+          </div>
+        </section>
 
         <div className="about-why-grid">
           <article className="about-card">
             <img src={agilanImage} alt="Agilan N" />
             <div>
               <h2>About Me</h2>
-              <p>I help businesses transform ideas into scalable digital solutions through innovative technology, strategic digital marketing, and data-driven business growth.</p>
-              <p>At BitByte Technologies, our mission is to build future-ready web applications, powerful digital brands, and measurable business outcomes.</p>
-              <a className="about-button" href="#contact">Know More About Agilan.N</a>
+              <p>I help businesses transform ideas into scalable AI Based digital solutions through innovative technology, strategic digital marketing, and Real Market data-driven business growth.</p>
+              <p>At BitByte Technologies, our mission is to build future-ready Digital Solutions, AI Based digital Brands, and measurable business outcomes.</p>
+              <a className="about-button" href="#contact">Connect With AI Scientist</a>
             </div>
           </article>
 
@@ -221,26 +315,27 @@ function App() {
                   return <li key={item}><span><Icon size={24} strokeWidth={2.4} /></span>{item}</li>
                 })}
               </ul>
-              <blockquote>We don't just build software, we transform imagination into digital reality.</blockquote>
+              <blockquote>"We don't just build software, we transform imagination into digital reality.</blockquote>
             </div>
           </article>
         </div>
 
         <div className="services-showcase" id="services">
           <h2>Our Services</h2>
-          <p>End-to-end digital solutions designed to grow your business.</p>
-          <div className="service-hover-hint">Hover a service to view AI-based solution details.</div>
+          <p>End-to-end digital solutions designed to grow your business with <mark className="ai-highlight">AI Science For Buisness</mark>.</p>
+          <div className="service-ai-methods">“<span>AI services</span>” &nbsp; | &nbsp; “<span>AI business methods</span>”</div>
+          <div className="service-hover-hint">Hover a service to view <mark className="ai-highlight">AI-based</mark> solution details.</div>
           <div className="service-tile-grid">
             {serviceTiles.map((service) => (
               <button type="button" className="showcase-service-card" key={service.title}>
                 <div className="service-popup">
                   <div className="popup-icon"><service.icon size={30} strokeWidth={2.2} /></div>
-                  <h3>{service.title}</h3>
-                  <p>{service.popup}</p>
+                  <h3>{highlightAI(service.title)}</h3>
+                  <p>{highlightAI(service.popup)}</p>
                   <span>{service.cta}</span>
                 </div>
                 <span className="service-icon"><service.icon size={42} strokeWidth={2.2} /></span>
-                <strong>{service.title}</strong>
+                <strong>{highlightAI(service.title)}</strong>
                 <i></i>
               </button>
             ))}
@@ -294,11 +389,11 @@ function App() {
             <CardHeader title="Send Us An Inquiry" />
             <p>Have a question or project in mind? Fill out the form and we will get back to you shortly.</p>
             <div className="contact-form-grid">
-              <input required placeholder="Your Name *" />
-              <input required type="email" placeholder="Your Email *" />
-              <input required placeholder="Your Phone Number *" />
-              <input className="contact-subject" placeholder="Subject" />
-              <textarea required placeholder="Your Message / Requirements *" rows="5"></textarea>
+              <input name="name" required placeholder="Your Name *" />
+              <input name="email" required type="email" placeholder="Your Email *" />
+              <input name="phone" required placeholder="Your Phone Number *" />
+              <input name="subject" className="contact-subject" placeholder="Subject" />
+              <textarea name="message" required placeholder="Your Message / Requirements *" rows="5"></textarea>
             </div>
             <button className="send-inquiry-button" type="submit">Send Inquiry</button>
             {formStatus && <p className="form-status">{formStatus}</p>}
@@ -327,7 +422,7 @@ function App() {
               <CardHeader title="Connect With Us" />
               <div className="connect-icons">
                 {socialLinks.map((item) => (
-                  <a href="#contact" className={item.tone} key={item.label}><span><i className={item.iconClass}></i></span>{item.label}</a>
+                  <a href={item.href} className={item.tone} target="_blank" rel="noreferrer" key={item.label}><span><i className={item.iconClass}></i></span>{item.label}</a>
                 ))}
               </div>
             </article>
@@ -351,15 +446,16 @@ function App() {
         <div className="footer-brand-block">
           <img src={bitbyteLogo} alt="BitByte Technologies" />
           <p>Imagination to Reality</p>
+          <strong>AI Science For Buisness</strong>
         </div>
         <div className="footer-pillars">
+          <span><Bot size={24} />AI Services</span>
           <span><Lightbulb size={24} />Innovative Solution</span>
           <span><Target size={24} />Result Driven</span>
-          <span><UsersRound size={24} />Customer Focused</span>
           <span><ShieldCheck size={24} />Quality & Trust</span>
         </div>
         <div className="footer-closing">
-          <blockquote>We don't just build software, we transform imagination into digital reality.</blockquote>
+          <blockquote>“We don't just build software, we transform imagination into digital reality.”</blockquote>
           <small>Copyright 2025 BitByte Technologies. All Rights Reserved.</small>
         </div>
       </footer>
