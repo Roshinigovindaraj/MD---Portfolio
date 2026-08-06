@@ -38,6 +38,51 @@ main {
   box-shadow: 0 18px 36px rgba(0, 0, 0, .26);
 }
 
+.menu-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 12px;
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: transform .24s var(--ease-out), background .24s var(--ease-out);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 999px;
+  transition: transform .28s ease, opacity .28s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.desktop-appointment {
+  display: inline-flex;
+}
+
+.mobile-appointment-link {
+  display: none;
+}
+
 .brand {
   width: 260px;
   height: 68px;
@@ -2240,6 +2285,7 @@ main {
   justify-items: start;
   align-content: center;
   gap: 6px;
+  position: relative;
 }
 
 .footer-brand-block img {
@@ -2248,6 +2294,8 @@ main {
   transform: scale(1.35);
   transform-origin: left center;
   clip-path: inset(24% 14% 28% 12%);
+  margin-left: -32px;
+  margin-top: 6px;
 }
 
 .footer-brand-block p {
@@ -2381,85 +2429,177 @@ main {
     min-height: 74px;
     flex-wrap: wrap;
     justify-content: center;
-    padding-block: 10px;
+    padding: 14px clamp(18px, 4vw, 40px);
+    gap: 14px;
+  }
+
+  .brand {
+    flex: 0 0 auto;
+    width: auto;
+  }
+
+  .brand img {
+    width: 160px;
+    margin: 0;
+    transform: none;
   }
 
   .desktop-nav {
     flex-wrap: wrap;
     order: 3;
     flex-basis: 100%;
+    justify-content: center;
+    gap: 10px 14px;
+  }
+
+  .desktop-nav a {
+    padding: 12px 0;
+    font-size: 14px;
+  }
+
+  .primary-button.compact {
+    width: 100%;
+    order: 4;
+    flex: 1 1 100%;
   }
 
   .hero {
     height: auto;
-    min-height: 610px;
+    min-height: auto;
+    padding-bottom: 28px;
+  }
+
+  .hero-background-image {
+    object-fit: cover;
+    object-position: 35% center;
   }
 
   .hero-copy {
-    width: min(620px, calc(100% - 48px));
-    margin: 0 24px 0 auto;
-    padding: 138px 0 50px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 116px 18px 32px;
   }
 
-  .service-detail {
-    min-height: auto;
+  .hero-copy h2 {
+    white-space: normal;
+    letter-spacing: 6px;
+  }
+
+  .hero-ai-line {
+    font-size: 20px;
+  }
+
+  .hero-lead {
+    max-width: 100%;
+    font-size: 18px;
+  }
+
+  .hero-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .hero-actions .primary-button,
+  .hero-actions .secondary-button {
+    min-height: 48px;
+    font-size: 13px;
+  }
+
+  .about-services-section {
+    padding-inline: 18px;
   }
 
   .about-value-strip,
   .service-tile-grid,
   .experience-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-tile-grid {
+    gap: 20px;
   }
 
   .experience-heading h2 {
-    max-width: 820px;
+    max-width: 100%;
   }
 
-  .experience-timeline {
-    display: none;
-  }
-
+  .experience-timeline,
   .experience-card::before {
     display: none;
   }
 
-  .about-value-item:nth-child(2n) {
-    border-right: 0;
-  }
-
   .about-card {
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 22px;
   }
 
   .about-card img {
-    width: 240px;
-    height: 240px;
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    margin: 0 auto;
   }
 
-  .service-insight ul,
-  .service-insight ol {
+  .why-card {
+    padding: 28px 24px;
+  }
+
+  .why-content {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .contact-heading p {
+    max-width: 100%;
+    padding: 0 12px;
+  }
+
+  .contact-card li,
+  .hours-table p {
     grid-template-columns: 1fr;
   }
 
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+
+  .contact-form-grid input,
+  .contact-form-grid textarea {
+    width: 100%;
+  }
+
+  .send-inquiry-button {
+    float: none;
+    width: 100%;
+    margin: 18px 0 22px;
+  }
+
   .quick-actions-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .footer-pillars {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-pillars span {
+    min-height: auto;
+    padding: 16px;
   }
 
   .site-footer {
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
+    padding: 24px 18px;
   }
 
   .footer-brand-block,
   .footer-closing {
     justify-items: center;
     text-align: center;
-  }
-
-  .footer-pillars {
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .service-popup {
@@ -2478,80 +2618,149 @@ main {
 }
 
 @media (max-width: 640px) {
+  .site-header {
+    padding: 14px 16px;
+    justify-content: space-between;
+  }
+
+  .brand {
+    flex: 0 0 auto;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
   .desktop-nav {
-    gap: 8px 18px;
+    position: fixed;
+    top: 78px;
+    right: 0;
+    left: 0;
+    z-index: 19;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: linear-gradient(180deg, rgba(0, 31, 34, .98), rgba(0, 31, 34, .98));
+    padding: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.35);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .28s var(--ease-out), opacity .28s var(--ease-out);
+  }
+
+  .desktop-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .desktop-nav a {
-    font-size: 13px;
-    padding: 9px 0;
+    padding: 16px 18px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
   }
 
-  .hero-tagline {
-    width: 100%;
-    letter-spacing: 2px;
-    text-align: center;
+  .desktop-nav a:last-child {
+    border-bottom: none;
   }
 
-  .hero-qr-card {
-    width: fit-content;
+  .desktop-appointment {
+    display: none;
+  }
+
+  .mobile-appointment-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+    color: #061b1e;
+    background: linear-gradient(180deg, #ffd571, #bd7c17);
+  }
+
+  .desktop-nav.open + .desktop-appointment {
+    display: none;
+  }
+
+  .desktop-nav {
+    gap: 8px;
   }
 
   .hero {
-    min-height: 760px;
+    min-height: auto;
+    background: transparent;
+  }
+
+  .hero::before,
+  .hero::after {
+    display: none;
   }
 
   .hero-background-image {
     object-fit: cover;
     object-position: 23% center;
+    opacity: 1;
   }
 
   .hero-copy {
     width: calc(100% - 28px);
     margin: 0 14px;
-    padding: 310px 0 34px;
-    background: linear-gradient(180deg, transparent, rgba(255,255,255,.72) 16%, rgba(255,255,255,.88));
-    border-radius: 0 0 10px 10px;
+    padding: 220px 16px 30px;
+    background: transparent;
+    border-radius: 0;
+    color: #fff;
+    max-width: 100%;
+  }
+
+  .hero-copy h1,
+  .hero-copy .role,
+  .hero-copy h2,
+  .hero-ai-line,
+  .hero-lead {
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
   }
 
   .hero-copy h2 {
     margin-left: 0;
     white-space: normal;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
   }
 
-  .hero-brand-panel {
-    right: 12px;
-    top: 16px;
+  .hero-ai-line {
+    font-size: 18px;
   }
 
-  .hero-company-logo {
-    width: 210px;
-    transform: scale(1.75);
+  .hero-tagline {
+    width: auto;
+    letter-spacing: 1px;
   }
 
   .hero-actions {
-    flex-direction: column;
-    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .hero-actions .primary-button,
   .hero-actions .secondary-button {
     width: 100%;
-  }
-
-  .metrics {
-    grid-template-columns: 1fr;
-    margin-inline: 18px;
+    min-height: 50px;
   }
 
   .about-services-section {
-    padding-inline: 12px;
+    padding-inline: 14px;
   }
 
   .about-value-strip,
   .service-tile-grid,
-  .experience-grid {
+  .experience-grid,
+  .about-why-grid,
+  .contact-top-grid,
+  .contact-bottom-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2564,7 +2773,7 @@ main {
   }
 
   .ornament-line {
-    width: 86vw;
+    width: 88vw;
   }
 
   .experience-heading p {
@@ -2577,12 +2786,12 @@ main {
   }
 
   .experience-card-top {
-    padding: 24px 20px;
+    padding: 22px 18px;
   }
 
   .service-tile-grid {
     padding-top: 0;
-    gap: 16px;
+    gap: 18px;
   }
 
   .service-popup,
@@ -2616,6 +2825,11 @@ main {
     padding: 22px;
   }
 
+  .about-card img {
+    width: 100%;
+    max-width: 260px;
+  }
+
   .about-card h2::after,
   .why-card h2::after {
     margin-inline: auto;
@@ -2636,31 +2850,135 @@ main {
   }
 
   .contact-heading h2 {
-    font-size: 36px;
+    font-size: 34px;
   }
 
   .contact-form-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .quick-actions-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quick-actions-grid a,
+  .quick-actions-grid button {
+    min-height: 72px;
   }
 
   .connect-icons {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .appointment-gold,
   .appointment-whatsapp {
-    width: calc(100% - 48px);
+    width: calc(100% - 32px);
   }
 
   .site-footer {
     text-align: center;
+    padding: 24px 16px;
   }
 
   .site-footer small {
     white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding: 12px 12px;
+    gap: 12px;
+  }
+
+  .brand img {
+    width: 140px;
+  }
+
+  .desktop-nav {
+    gap: 6px 12px;
+  }
+
+  .desktop-nav a {
+    font-size: 12px;
+    padding: 6px 0;
+  }
+
+  .primary-button.compact {
+    min-height: 44px;
+    padding-inline: 16px;
+  }
+
+  .hero-copy {
+    padding: 180px 14px 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 9vw, 52px);
+  }
+
+  .hero .role {
+    font-size: 19px;
+  }
+
+  .hero-ai-line {
+    font-size: 16px;
+  }
+
+  .hero-lead {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .primary-button,
+  .hero-actions .secondary-button {
+    min-height: 48px;
+  }
+
+  .about-services-section {
+    padding-inline: 12px;
+  }
+
+  .about-card img {
+    max-width: 220px;
+  }
+
+  .contact-heading h2 {
+    font-size: 30px;
+  }
+
+  .contact-heading p {
+    font-size: 16px;
+  }
+
+  .quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-actions-grid a,
+  .quick-actions-grid button {
+    min-height: 70px;
+  }
+
+  .appointment-gold,
+  .appointment-whatsapp {
+    width: 100%;
+  }
+
+  .footer-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-pillars span {
+    font-size: 12px;
+    padding: 14px 12px;
+  }
+
+  .contact-lines li {
+    grid-template-columns: 28px 1fr;
   }
 }

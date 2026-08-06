@@ -111,12 +111,12 @@ const experienceCards = [
   {
     title: 'Excellence Always',
     icon: Star,
-    points: ['11+ Years as Trainer', 'Training Experience with OPPO, Huawei, T369', 'Quality, Trust & Long-Term Impact'],
+    points: ['11+ Years as Trainer', 'Training Experience with OPPO, Huawei, Team369', 'Quality, Trust & Long-Term Impact'],
     summaryIcon: ShieldCheck,
     summary: 'Delivering professional training, reliable guidance, and consistent business value.',
   },
 ]
-const aiPattern = /(AI Science For Buisness|AI-based|AI Based|AI Powered|AI services|AI business methods|\bAI\b)/i
+const aiPattern = /(AI Science For Buisness|AI-based|AI Based|AI Powered|AI services|AI business methods|\bAI\b|\bAircel\b|\bVodafone\b|\bHuawei\b|\bHonor\b|\bOPPO\b|\bTeam369\b|5000\+ Customers Trained)/i
 
 function highlightAI(text) {
   return String(text).split(aiPattern).map((part, index) => (
@@ -129,6 +129,7 @@ function highlightAI(text) {
 function App() {
   const [formStatus, setFormStatus] = useState('')
   const [actionStatus, setActionStatus] = useState('')
+  const [menuOpen, setMenuOpen] = useState(false)
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -217,14 +218,28 @@ function App() {
         <a className="brand" href="#home" aria-label="BitByte Technologies home">
           <img src={bitbyteLogo} alt="BitByte Technologies" />
         </a>
-        <nav className="desktop-nav" aria-label="Main navigation">
+        <button
+          type="button"
+          className={`menu-toggle${menuOpen ? ' open' : ''}`}
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <nav className={`desktop-nav${menuOpen ? ' open' : ''}`} aria-label="Main navigation">
           {navItems.map((item) => (
-            <a href={`#${item.toLowerCase().replaceAll(' ', '-')}`} key={item}>
+            <a href={`#${item.toLowerCase().replaceAll(' ', '-')}`} key={item} onClick={() => setMenuOpen(false)}>
               {item}
             </a>
           ))}
+          <a className="mobile-appointment-link" href="#appointment" onClick={() => setMenuOpen(false)}>
+            Book Appointment
+          </a>
         </nav>
-        <a className="primary-button compact" href="#appointment">Book Appointment</a>
+        <a className="primary-button compact desktop-appointment" href="#appointment">Book Appointment</a>
       </header>
 
       <section className="hero" id="home">
@@ -239,7 +254,7 @@ function App() {
           <p className="hero-ai-line">“<span>AI Science For Buisness</span>”</p>
           <p className="hero-tagline">Imagination to Reality</p>
           <p className="hero-lead">
-            We transform your imagination into AI powered digital solutions that drive growth and deliver AI Based business results.
+            We transform your imagination into <b>AI powered digital solutions</b> that drive growth and deliver <b>AI Based business results</b>.
           </p>
           <div className="hero-actions">
             <a className="secondary-button visit-site-button" href="https://bitbytetech.org" target="_blank" rel="noreferrer"><Globe2 size={24} />Visit Our Website</a>
@@ -299,8 +314,8 @@ function App() {
             <img src={agilanImage} alt="Agilan N" />
             <div>
               <h2>About Me</h2>
-              <p>I help businesses transform ideas into scalable AI Based digital solutions through innovative technology, strategic digital marketing, and Real Market data-driven business growth.</p>
-              <p>At BitByte Technologies, our mission is to build future-ready Digital Solutions, AI Based digital Brands, and measurable business outcomes.</p>
+              <p>I help businesses transform ideas into scalable <b>AI Based digital solutions</b> through innovative technology, strategic digital marketing, and Real Market data-driven business growth.</p>
+              <p>At BitByte Technologies, our mission is to build future-ready Digital Solutions,<b> AI Based digital Brands, and measurable business outcomes.</b></p>
               <a className="about-button" href="#contact">Connect With AI Scientist</a>
             </div>
           </article>
