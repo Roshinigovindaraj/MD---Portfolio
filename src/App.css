@@ -3078,9 +3078,6 @@ main {
     grid-template-columns: 28px 1fr;
   }
 }
-}
-
 .contact-lines li {
   grid-template-columns: 28px 1fr;
-}
 }
