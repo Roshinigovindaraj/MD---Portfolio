@@ -55,9 +55,9 @@ const serviceTiles = [
 ]
 
 const quickActions = [
-  { label: 'Call Now', icon: Phone, tone: 'call', href: 'tel:+919943743136' },
-  { label: 'WhatsApp', icon: Phone, tone: 'whatsapp', href: 'https://wa.me/919943743136' },
-  { label: 'Email', icon: Mail, tone: 'email', href: 'mailto:reachus@bitbytech.org?subject=Project%20Inquiry%20for%20BitByte%20Technologies' },
+  { label: 'Call Now', icon: Phone, tone: 'call', href: 'tel:+919789274743' },
+  { label: 'WhatsApp', icon: Phone, tone: 'whatsapp', href: 'https://wa.me/919789274743' },
+  { label: 'Email', icon: Mail, tone: 'email', href: 'mailto:ed@bitbytetech.org?subject=Project%20Inquiry%20for%20BitByte%20Technologies' },
   { label: 'Visit Website', icon: Globe2, tone: 'website', href: 'https://www.bitbytetech.org' },
   {
     label: 'Navigate',
@@ -148,7 +148,7 @@ function App() {
       formData.get('message'),
     ].join('\n')
 
-    window.open(`https://wa.me/919943743136?text=${encodeURIComponent(inquiryMessage)}`, '_blank', 'noopener,noreferrer')
+    window.open(`https://wa.me/919789274743?text=${encodeURIComponent(inquiryMessage)}`, '_blank', 'noopener,noreferrer')
     setFormStatus('WhatsApp opened with your inquiry details. Please tap send to complete it.')
   }
 
@@ -160,8 +160,8 @@ function App() {
       'FN:Mr. Agilan.N',
       'ORG:BitByte Technologies',
       'TITLE:Executive Director',
-      'TEL;TYPE=CELL:+919943743136',
-      'EMAIL:reachus@bitbytech.org',
+      'TEL;TYPE=CELL:+919789274743',
+      'EMAIL:ed@bitbytetech.org',
       'URL:https://www.bitbytetech.org',
       'ADR;TYPE=WORK:;;2nd Floor, Raja Complex (West Wing), Opp. Sago Serve, Omalur Main Road;Salem;Tamil Nadu;636302;India',
       'NOTE:BitByte Technologies - Imagination to Reality',
@@ -194,7 +194,7 @@ function App() {
         return
       }
 
-      await navigator.clipboard.writeText(`${shareData.title}\n${shareData.text}\nPhone: +91 99437 43136\nEmail: reachus@bitbytech.org\n${shareData.url}`)
+      await navigator.clipboard.writeText(`${shareData.title}\n${shareData.text}\nPhone: +91 97892 74743\nEmail: ed@bitbytetech.org\n${shareData.url}`)
       setActionStatus('Card details copied to clipboard.')
     } catch {
       setActionStatus('Share was cancelled.')
@@ -259,7 +259,7 @@ function App() {
           <div className="hero-actions">
             <a className="secondary-button visit-site-button" href="https://www.bitbytetech.org" target="_blank" rel="noreferrer"><Globe2 size={24} />Visit Our Website</a>
             <a className="primary-button" href="#appointment"><Calendar size={24} />Book Appointment</a>
-            <a className="secondary-button" href="https://wa.me/919943743136" target="_blank" rel="noreferrer"><Phone size={24} />WhatsApp Now</a>
+            <a className="secondary-button" href="https://wa.me/919789274743" target="_blank" rel="noreferrer"><Phone size={24} />WhatsApp Now</a>
           </div>
         </div>
 
@@ -368,8 +368,8 @@ function App() {
           <article className="contact-box">
             <CardHeader title="Contact Information" />
             <ul className="contact-lines">
-              <li><span><PhoneCall size={18} /></span>+91 99437 43136 (WhatsApp Only)</li>
-              <li><span><Mail size={18} /></span>reachus@bitbytech.org</li>
+              <li><span><PhoneCall size={18} /></span>+91 97892 74743 (WhatsApp Only)</li>
+              <li><span><Mail size={18} /></span>ed@bitbytetech.org</li>
               <li><span><Globe2 size={18} /></span>www.bitbytetech.org</li>
               <li><span><MapPin size={18} /></span>2nd Floor, Raja Complex (West Wing), Opp. Sago Serve, Omalur Main Road, Salem - 636302, Tamil Nadu, India.</li>
             </ul>
@@ -392,8 +392,8 @@ function App() {
             <CardHeader title="Make An Appointment" />
             <p>Schedule a meeting with</p>
             <strong>Mr. Agilan.N</strong>
-            <a className="appointment-gold" href="mailto:reachus@bitbytech.org?subject=Appointment%20with%20Mr.%20Agilan.N">Book Appointment</a>
-            <a className="appointment-whatsapp" href="https://wa.me/919943743136" target="_blank" rel="noreferrer">WhatsApp Now</a>
+            <a className="appointment-gold" href="mailto:ed@bitbytetech.org?subject=Appointment%20with%20Mr.%20Agilan.N">Book Appointment</a>
+            <a className="appointment-whatsapp" href="https://wa.me/919789274743" target="_blank" rel="noreferrer">WhatsApp Now</a>
             <p>Let's discuss how we can grow your business!</p>
           </article>
         </div>
