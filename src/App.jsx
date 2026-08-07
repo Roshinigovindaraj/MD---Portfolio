@@ -58,7 +58,7 @@ const quickActions = [
   { label: 'Call Now', icon: Phone, tone: 'call', href: 'tel:+919943743136' },
   { label: 'WhatsApp', icon: Phone, tone: 'whatsapp', href: 'https://wa.me/919943743136' },
   { label: 'Email', icon: Mail, tone: 'email', href: 'mailto:reachus@bitbytech.org?subject=Project%20Inquiry%20for%20BitByte%20Technologies' },
-  { label: 'Visit Website', icon: Globe2, tone: 'website', href: 'https://bitbytetech.org' },
+  { label: 'Visit Website', icon: Globe2, tone: 'website', href: 'https://www.bitbytetech.org' },
   {
     label: 'Navigate',
     icon: MapPin,
@@ -162,7 +162,7 @@ function App() {
       'TITLE:Executive Director',
       'TEL;TYPE=CELL:+919943743136',
       'EMAIL:reachus@bitbytech.org',
-      'URL:https://bitbytetech.org',
+      'URL:https://www.bitbytetech.org',
       'ADR;TYPE=WORK:;;2nd Floor, Raja Complex (West Wing), Opp. Sago Serve, Omalur Main Road;Salem;Tamil Nadu;636302;India',
       'NOTE:BitByte Technologies - Imagination to Reality',
       'END:VCARD',
@@ -184,7 +184,7 @@ function App() {
     const shareData = {
       title: 'Mr. Agilan.N - BitByte Technologies',
       text: 'Executive Director, BitByte Technologies. Imagination to Reality.',
-      url: 'https://bitbytetech.org',
+      url: 'https://www.bitbytetech.org',
     }
 
     try {
@@ -257,7 +257,7 @@ function App() {
             We transform your imagination into <b>AI powered digital solutions</b> that drive growth and deliver <b>AI Based business results</b>.
           </p>
           <div className="hero-actions">
-            <a className="secondary-button visit-site-button" href="https://bitbytetech.org" target="_blank" rel="noreferrer"><Globe2 size={24} />Visit Our Website</a>
+            <a className="secondary-button visit-site-button" href="https://www.bitbytetech.org" target="_blank" rel="noreferrer"><Globe2 size={24} />Visit Our Website</a>
             <a className="primary-button" href="#appointment"><Calendar size={24} />Book Appointment</a>
             <a className="secondary-button" href="https://wa.me/919943743136" target="_blank" rel="noreferrer"><Phone size={24} />WhatsApp Now</a>
           </div>
