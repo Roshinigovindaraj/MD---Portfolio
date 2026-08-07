@@ -2756,6 +2756,10 @@ main {
     text-shadow: none;
   }
 
+  .hero-rule span {
+    display: none;
+  }
+
   .hero-copy h2 {
     margin-left: 0;
     white-space: normal;
@@ -2975,9 +2979,7 @@ main {
   }
 
   .hero-rule span {
-    width: 14px;
-    height: 14px;
-    top: -8px;
+    display: none;
   }
 
   .hero-copy h2 {
