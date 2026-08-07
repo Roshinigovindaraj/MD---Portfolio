@@ -40,31 +40,41 @@ main {
 
 .menu-toggle {
   display: none;
-  width: 46px;
-  height: 46px;
-  border: 1px solid rgba(255,255,255,.18);
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--gold);
   border-radius: 12px;
-  background: rgba(255,255,255,.08);
-  color: #fff;
+  background: rgba(0, 50, 54, 0.88);
+  color: var(--gold);
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  flex-direction: column;
+  gap: 5px;
   padding: 0;
   cursor: pointer;
-  transition: transform .24s var(--ease-out), background .24s var(--ease-out);
+  box-shadow: 0 4px 14px rgba(214, 154, 35, 0.3);
+  transition: transform .24s var(--ease-out), background .24s var(--ease-out), border-color .24s var(--ease-out);
+}
+
+.menu-toggle:hover {
+  background: var(--gold);
+}
+
+.menu-toggle:hover span {
+  background: #001f22;
 }
 
 .menu-toggle span {
   display: block;
   width: 22px;
-  height: 2px;
-  background: #fff;
+  height: 2.5px;
+  background: var(--gold);
   border-radius: 999px;
-  transition: transform .28s ease, opacity .28s ease;
+  transition: transform .28s ease, opacity .28s ease, background .24s ease;
 }
 
 .menu-toggle.open span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(7.5px) rotate(45deg);
 }
 
 .menu-toggle.open span:nth-child(2) {
@@ -72,7 +82,7 @@ main {
 }
 
 .menu-toggle.open span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-7.5px) rotate(-45deg);
 }
 
 .desktop-appointment {
@@ -2690,9 +2700,14 @@ main {
     gap: 8px;
   }
 
+  /* ── MOBILE HERO: stacked layout – image on top, content below ── */
   .hero {
     min-height: auto;
-    background: transparent;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(160deg, var(--teal-950) 0%, var(--teal-900) 100%);
+    overflow: hidden;
   }
 
   .hero::before,
@@ -2700,20 +2715,36 @@ main {
     display: none;
   }
 
+  /* Image sits naturally at the top, full width, not absolutely positioned */
   .hero-background-image {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 55vw;
+    max-height: 280px;
+    min-height: 200px;
     object-fit: cover;
-    object-position: 23% center;
+    object-position: center 10%;
     opacity: 1;
+    background: transparent;
+    display: block;
+    flex-shrink: 0;
   }
 
+  /* Content sits below the image, no overlap */
   .hero-copy {
-    width: calc(100% - 28px);
-    margin: 0 14px;
-    padding: 220px 16px 30px;
-    background: transparent;
-    border-radius: 0;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    margin: 0;
+    padding: 20px 18px 24px;
+    background: linear-gradient(160deg, var(--teal-950) 0%, var(--teal-900) 100%);
     color: #fff;
     max-width: 100%;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .hero-copy h1,
@@ -2722,7 +2753,7 @@ main {
   .hero-ai-line,
   .hero-lead {
     color: #fff;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
+    text-shadow: none;
   }
 
   .hero-copy h2 {
@@ -2732,23 +2763,25 @@ main {
   }
 
   .hero-ai-line {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .hero-tagline {
     width: auto;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-size: 11px;
+    padding: 7px 14px;
   }
 
   .hero-actions {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
 
   .hero-actions .primary-button,
   .hero-actions .secondary-button {
     width: 100%;
-    min-height: 50px;
+    min-height: 44px;
   }
 
   .about-services-section {
@@ -2906,37 +2939,81 @@ main {
   }
 
   .primary-button.compact {
-    min-height: 44px;
-    padding-inline: 16px;
+    min-height: 40px;
+    padding-inline: 14px;
+  }
+
+  /* ── 480px hero – still stacked, slightly tighter ── */
+  .hero-background-image {
+    height: 60vw;
+    max-height: 260px;
+    object-position: center 8%;
   }
 
   .hero-copy {
-    padding: 180px 14px 24px;
+    padding: 18px 14px 20px;
+  }
+
+  .hero .eyebrow {
+    font-size: 22px;
+    margin-bottom: 2px;
   }
 
   .hero h1 {
-    font-size: clamp(40px, 9vw, 52px);
+    font-size: clamp(30px, 8vw, 40px);
   }
 
   .hero .role {
-    font-size: 19px;
+    font-size: 15px;
+    margin-top: 4px;
+  }
+
+  .hero-rule {
+    height: 14px;
+    max-width: 200px;
+    margin: 8px 0 10px;
+  }
+
+  .hero-rule span {
+    width: 14px;
+    height: 14px;
+    top: -8px;
+  }
+
+  .hero-copy h2 {
+    font-size: clamp(14px, 4.5vw, 18px);
+    margin-bottom: 8px;
+    letter-spacing: 4px;
   }
 
   .hero-ai-line {
-    font-size: 16px;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .hero-tagline {
+    font-size: 10px;
+    padding: 6px 12px;
+    margin-bottom: 8px;
+    letter-spacing: 5px;
   }
 
   .hero-lead {
-    font-size: 16px;
+    font-size: 13px;
+    line-height: 1.45;
+    margin-bottom: 14px;
   }
 
   .hero-actions {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .hero-actions .primary-button,
   .hero-actions .secondary-button {
-    min-height: 48px;
+    min-height: 44px;
+    font-size: 13px;
+    padding: 0 16px;
   }
 
   .about-services-section {
