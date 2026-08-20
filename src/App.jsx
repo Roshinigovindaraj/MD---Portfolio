@@ -31,7 +31,24 @@ const reasons = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [sent, setSent] = useState(false)
-  function submitInquiry(e) { e.preventDefault(); const d = new FormData(e.currentTarget); const msg = `Hello BitByte Technologies!\n\nName: ${d.get('name')}\nEmail: ${d.get('email')}\nPhone: ${d.get('phone')}\n\nRequirement: ${d.get('message')}`; window.open(`https://wa.me/918248654541?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer'); setSent(true) }
+  function submitInquiry(event) {
+    event.preventDefault()
+    const form = new FormData(event.currentTarget)
+    const message = [
+      'Hello BitByte Technologies!',
+      '',
+      'New Website Inquiry',
+      `Name: ${form.get('name')}`,
+      `Email: ${form.get('email')}`,
+      `Phone: ${form.get('phone')}`,
+      '',
+      'Project Requirement:',
+      form.get('message'),
+    ].join('\n')
+
+    setSent(true)
+    window.location.assign(`https://api.whatsapp.com/send?phone=918248654541&text=${encodeURIComponent(message)}`)
+  }
   function saveContact() { const card = ['BEGIN:VCARD', 'VERSION:3.0', 'N:Rao;Beema;;;', 'FN:BeemaRao. N', 'ORG:BitByte Technologies', 'TITLE:Managing Director', 'TEL;TYPE=CELL:+918248654541', 'EMAIL:md@bitbytetech.org', 'URL:https://www.bitbytetech.org', 'END:VCARD'].join('\n'); const url = URL.createObjectURL(new Blob([card], { type: 'text/vcard' })); const link = document.createElement('a'); link.href = url; link.download = 'BeemaRao-N-BitByte.vcf'; link.click(); URL.revokeObjectURL(url) }
   return <main>
     <header className="header">
